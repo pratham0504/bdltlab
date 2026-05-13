@@ -105,7 +105,7 @@ contract NFTMinting {
     }
 }
 
-<!-- How to Perform in Practical
+/*<!-- How to Perform in Practical
 Step 1. Open Remix IDE
 
 Step 2. Create File
@@ -195,4 +195,4 @@ Address of the user calling the smart contract function.
 NFT	                       Cryptocurrency
 Unique	                   Fungible
 Cannot replace each other  Interchangeable
-Represents ownership	   Represents currency
+Represents ownership	   Represents currency*/
