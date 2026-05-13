@@ -104,7 +104,7 @@ contract Crowdfunding {
 
 
 
-<!-- Steps to Perform in Remix IDE
+/*<!-- Steps to Perform in Remix IDE
 1. Open Remix IDE
 
 2. Create Solidity File
@@ -177,4 +177,4 @@ Allows a function or address to send/receive Ether.
 Current block time used for deadlines.
 
 6. Why is refund functionality important?
-It protects donors if funding goals are not achieved. -->
+It protects donors if funding goals are not achieved. -->*/
