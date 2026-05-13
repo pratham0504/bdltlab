@@ -1,4 +1,4 @@
-Simple Solidity Program and Deployment on Truffle Local Blockchain
+/*Simple Solidity Program and Deployment on Truffle Local Blockchain
 Aim
 
 To write, compile, and deploy a simple Solidity smart contract using Truffle on a local blockchain.
@@ -30,7 +30,7 @@ Create file:
 
 SimpleStorage.sol
 
-Write the following code:
+Write the following code:/*
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
