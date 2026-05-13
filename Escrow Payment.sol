@@ -85,7 +85,7 @@ contract EscrowPayment {
 }
 
 
-<!-- How to Perform in Practical
+/*<!-- How to Perform in Practical
 Step 1. Open Remix IDE
 
 Step 2. Create File
@@ -180,4 +180,4 @@ Q4. Why use payable?
 To allow the contract and seller address to receive Ether.
 
 Q5. What happens if dispute is raised?
-Funds remain locked until manual resolution (or additional logic is added).
+Funds remain locked until manual resolution (or additional logic is added).*/
