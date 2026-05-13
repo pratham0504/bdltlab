@@ -1,9 +1,9 @@
-<!-- STEP 1 — Open Remix IDE
+/*<!-- STEP 1 — Open Remix IDE
     Go to:
     Remix IDE
     Create a file: SimpleStorage.sol
 
-STEP 2 — Write Smart Contract -->
+STEP 2 — Write Smart Contract -->*/
 
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.0;
@@ -21,7 +21,7 @@ STEP 2 — Write Smart Contract -->
         }
     }
 
-<!-- STEP 3 — Compile Contract
+/*<!-- STEP 3 — Compile Contract
 
 STEP 4 — Deploy Contract
 
@@ -61,4 +61,4 @@ Q5. What is bytecode?
 Compiled machine code executed by EVM.
 
 Q6. Why Ganache is used?
-Provides local testing blockchain with fake ETH. -->
+Provides local testing blockchain with fake ETH. -->*/
