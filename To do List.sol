@@ -1,4 +1,4 @@
- // SPDX-License-Identifier MIT
+ // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract DecentralizedTodo {
@@ -9,10 +9,10 @@ contract DecentralizedTodo {
         bool completed;
     }
 
-     Store tasks for each user
-    mapping(address = Task[]) private userTasks;
+    // Store tasks for each user
+    mapping(address => Task[]) private userTasks;
 
-     Add a new task
+    // Add a new task
     function addTask(string memory _taskText) public {
         uint taskId = userTasks[msg.sender].length;
 
@@ -21,27 +21,27 @@ contract DecentralizedTodo {
         );
     }
 
-     Update an existing task
+    // Update an existing task
     function updateTask(uint _taskId, string memory _newText) public {
         require(
-            _taskId  userTasks[msg.sender].length,
-            Task does not exist
+            _taskId < userTasks[msg.sender].length,
+            "Task does not exist"
         );
 
         userTasks[msg.sender][_taskId].taskText = _newText;
     }
 
-     Mark task as completed
+    // Mark task as completed
     function markCompleted(uint _taskId) public {
         require(
-            _taskId  userTasks[msg.sender].length,
-            Task does not exist
+            _taskId < userTasks[msg.sender].length,
+            "Task does not exist"
         );
 
         userTasks[msg.sender][_taskId].completed = true;
     }
 
-     Get all tasks of logged-in user
+    // Get all tasks of logged-in user
     function getMyTasks() public view returns (Task[] memory) {
         return userTasks[msg.sender];
     }
