@@ -63,7 +63,7 @@ contract CertificateVerification {
     }
 }
 
-<!-- How to Perform in Practical
+/*<!-- How to Perform in Practical
 1. Open Remix
 
 2. Create File
@@ -117,4 +117,4 @@ To store certificate issue time.
 It validates conditions and stops invalid transactions.
 
 5. Who is admin?
-The MetaMask account that deploys the contract.
+The MetaMask account that deploys the contract.*/
