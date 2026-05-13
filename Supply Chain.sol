@@ -100,7 +100,7 @@ contract SupplyChain {
 }
 
 
-<!-- How to Perform in Practical
+/*<!-- How to Perform in Practical
 Step 1. Open Remix IDE
 
 Step 2. Create File
@@ -182,3 +182,4 @@ Step 5. Test Functions
     0	    Manufacturer          Manufactured	 Stored
     1	    Distributor	          Distributor	 Stored
     2	    Retailer	          Retailer	     Stored
+*/
