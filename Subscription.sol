@@ -57,7 +57,7 @@ contract SubscriptionService {
     }
 }
 
-<!-- How to Perform in Practical
+/*<!-- How to Perform in Practical
 Step 1. Open Remix IDE
 
 Step 2. Create File
@@ -128,4 +128,4 @@ To store subscription details for each user address.
 By comparing current time with stored expiry time.
 
 5. Who can withdraw funds?
-Only the contract owner.
+Only the contract owner.*/
