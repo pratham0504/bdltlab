@@ -1,4 +1,4 @@
- SPDX-License-Identifier MIT
+ // SPDX-License-Identifier MIT
 pragma solidity ^0.8.0;
 
 contract DecentralizedTodo {
@@ -48,7 +48,7 @@ contract DecentralizedTodo {
 }
 
 
-<!-- How to Perform in Remix IDE
+/*<!-- How to Perform in Remix IDE
 Step 1: Open Remix
 
 Step 2: Create File
@@ -118,4 +118,4 @@ mapping(address => Task[])
 which separates tasks for each wallet address.
 
 5. What is the purpose of require()?
-It validates conditions and reverts transaction if condition fails. -->
+It validates conditions and reverts transaction if condition fails. -->*/
