@@ -32,7 +32,7 @@ contract SimpleBank {
 
 
 
-<!-- How to Perform in Practical
+/*<!-- How to Perform in Practical
 Step 1. Open Remix IDE
 
 Step 2. Create File
@@ -59,6 +59,4 @@ Step 5. Test Functions
         For 1 Ether withdrawal:
         1000000000000000000
 
-    4. Click withdraw -->
-
-
+    4. Click withdraw -->*/
