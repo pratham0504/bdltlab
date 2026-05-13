@@ -1,0 +1,53 @@
+Q1. Perform and Write Truffle installation Steps 
+
+Q2. Perform and write Simple program using solidity language and deployment on truffle local blockchain
+
+Q3. Metamask installation
+
+Q4. Write Smart contract using Metamask and  Remix
+
+Q5. Perform and write web3 program
+
+Q6. Perform and write study of Cryptocurrency development.
+
+Q7. Perform and write study Chain code in Hyperledger Fabric
+
+Q8. Decentralized Voting System
+Problem Statement:
+ Design and implement a smart contract in Remix that allows users to vote for candidates in a secure and transparent election. The system should ensure one vote per address and allow the admin to start and end the voting period.
+ 
+Q9. Crowdfunding Platform
+Problem Statement:
+ Create a smart contract that allows users to create fundraising campaigns and accept donations. If the funding goal is not met by the deadline, donors should be able to withdraw their funds.
+ 
+Q10. Decentralized To-Do List
+Problem Statement:
+ Develop a smart contract that allows users to add, update, and mark tasks as completed. Each user's tasks should be stored independently and be accessible only by the user.
+ 
+Q11. Simple Bank (Wallet System)
+Problem Statement:
+ Build a smart contract that functions as a simple bank. Users should be able to deposit, withdraw, and check their balance. Only the account holder should have access to their funds.
+ 
+Q12. Supply Chain Management
+Problem Statement:
+ Create a smart contract to track products from manufacturer to consumer. Each step in the supply chain should be recorded immutably with timestamps and participant addresses.
+ 
+Q13. NFT Minting Contract
+Problem Statement:
+ Develop a smart contract that allows users to mint and transfer non-fungible tokens (NFTs) representing digital assets. Include metadata for each NFT and ensure ownership tracking.
+ 
+Q14. Subscription Service
+Problem Statement:
+ Implement a smart contract that manages subscription-based access to a service. Users should pay to subscribe for a period of time, and access should automatically expire afterward.
+ 
+Q15. Escrow Payment System
+Problem Statement:
+ Design a smart contract that acts as an escrow between a buyer and a seller. Funds should be released only when both parties agree or after a certain time if no disputes are raised.
+ 
+Q16. Decentralized Lottery System
+Problem Statement:
+ Create a lottery smart contract where users can buy tickets, and a random winner is picked at the end of the round. Ensure fairness and prevent manipulation.
+ 
+Q17. Certificate Issuance and Verification
+Problem Statement:
+ Build a smart contract that issues digital certificates (e.g., for a course or event) and allows anyone to verify their authenticity using the certificate ID or address.

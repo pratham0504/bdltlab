@@ -1,0 +1,85 @@
+🛠️ Step 1: Initialize Your Truffle Project
+Open your Command Prompt or PowerShell and create a dedicated workspace for this program.
+PowerShell
+mkdir truffle-demo && cd truffle-demo
+truffle init
+This command creates the standard directory structure: contracts/, migrations/, test/, and truffle-config.js.
+ 
+📄 Step 2: Write the Solidity Smart Contract
+Create a file named SimpleStorage.sol inside the contracts/ folder. We will use the same logic you successfully compiled earlier in Remix.
+Solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    uint256 public storedData;
+
+    // Function to update the value
+    function set(uint256 x) public {
+        storedData = x;
+    }
+
+    // Function to read the value
+    function get() public view returns (uint256) {
+        return storedData;
+    }
+}
+ 
+🚀 Step 3: Create the Deployment Script
+Truffle needs a "migration" script to know how to deploy your specific contract. Create a file named 1_deploy_contract.js inside the migrations/ folder.
+JavaScript
+const SimpleStorage = artifacts.require("SimpleStorage");
+
+module.exports = function (deployer) {
+  deployer.deploy(SimpleStorage);
+};
+ 
+⚙️ Step 4: Configure the Local Blockchain
+You need a local blockchain to deploy to. You have two main options:
+1.	Truffle Develop: Built directly into Truffle. Run truffle develop in your terminal to start a local node on port 9545.
+2.	Ganache: A separate GUI tool (which you previously looked at) that runs on port 7545.
+ 
+If using Ganache, ensure your truffle-config.js has these lines uncommented:
+JavaScript
+module.exports = {
+  networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*", 
+    },
+  },
+
+  compilers: {
+    solc: {
+      version: "0.8.21",
+      settings: {          
+       optimizer: {
+         enabled: false,
+         runs: 200
+       },
+       evmVersion: "london"
+      }
+    }
+  },
+};
+
+🔨 Step 5: Compile and Deploy
+Run the following commands in your terminal:
+1.	Compile the contract:
+PowerShell
+truffle compile
+2.	Migrate (Deploy) to the local network:
+PowerShell
+truffle migrate
+ 
+🧪 Step 6: Verify the Deployment
+You can interact with your deployed contract directly through the Truffle Console to prove it works:
+PowerShell
+truffle console --network development
+Once inside the console, run these commands:
+JavaScript
+const instance = await SimpleStorage.deployed() 
+await instance.set(64) 
+const res = await instance.get() 
+res.toString()

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web3 Program</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <h2>Web3 MetaMask Connection</h2>
+    <button onclick="connectWallet()">
+        Connect MetaMask
+    </button>
+    <button onclick="getAccount()">
+        Get Account
+    </button>
+    <h3 id="output"></h3>
+    <script>
+        let web3;
+        async function connectWallet() {
+            if (typeof window.ethereum !== 'undefined') {
+        try {
+            await window.ethereum.request({
+                method: 'eth_requestAccounts'
+            });
+            web3 = new Web3(window.ethereum);
+            document.getElementById("output").innerHTML =
+            "MetaMask Connected Successfully";
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+    else {
+        alert("MetaMask not detected");
+    }
+}
+async function getAccount(){
+    if(!web3){
+        alert("First connect MetaMask");
+        return;
+    }
+    const accounts = await web3.eth.getAccounts();
+    console.log(accounts);
+    document.getElementById("output").innerHTML =
+    "Ethereum Account: " + accounts[0];
+}
+    </script>
+</body>
+</html>
+
+
+<!-- Steps:
+1. Open Ganache
+Start Ganache blockchain.
+
+2. Connect MetaMask to Ganache
+Add Ganache network in MetaMask:
+
+3. Save Program
+Save code as: index.html
+
+4. Run Program
+
+5. Click
+Connect MetaMask
+MetaMask popup appears.
+
+Click: Connect
+
+6. Click
+Get Account
+Ethereum account address will display. -->
