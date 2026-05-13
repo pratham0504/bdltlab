@@ -13,6 +13,41 @@ contract SimpleStorage {
         return data;
     }
 }
+
+/*Simple Solidity Program and Deployment on Truffle Local Blockchain
+Aim
+
+To write, compile, and deploy a simple Solidity smart contract using Truffle on a local blockchain.
+
+Requirements
+Node.js
+Truffle Framework
+Ganache Local Blockchain
+Step 1: Create Truffle Project
+
+Open Command Prompt and run:
+
+mkdir SimpleContract
+
+Move into project folder:
+
+cd SimpleContract
+
+Initialize Truffle project:
+
+truffle init
+Step 2: Write Solidity Program
+
+Open:
+
+contracts
+
+Create file:
+
+SimpleStorage.sol
+
+Write the following code:
+
 Step 3: Create Migration File
 
 Open folder:
@@ -98,4 +133,4 @@ Expected Output:
 '100'
 Result
 
-The Solidity smart contract was successfully compiled and deployed on Truffle local blockchain using Ganache.
+The Solidity smart contract was successfully compiled and deployed on Truffle local blockchain using Ganache.*/
