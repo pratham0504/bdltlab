@@ -49,7 +49,7 @@ contract Lottery {
 }
 
 
-<!-- How to Perform in Remix + MetaMask
+/*<!-- How to Perform in Remix + MetaMask
 1. Open Remix
 
 2. Create File
@@ -121,4 +121,4 @@ This is a basic educational lottery contract.
 Using:
     Chainlink VRF
     commit-reveal schemes
-    oracle-based randomness -->
+    oracle-based randomness -->*/
