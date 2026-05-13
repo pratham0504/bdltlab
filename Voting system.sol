@@ -81,7 +81,7 @@ contract Voting {
 }
 
 
-<!-- STEPS:
+/*<!-- STEPS:
 
 Step 1: Open Remix
 
@@ -151,4 +151,4 @@ Using:
 mapping(address => bool) hasVoted;
 
 5. What is Remix?
-Remix IDE is an online Solidity IDE for writing and deploying smart contracts. -->
+Remix IDE is an online Solidity IDE for writing and deploying smart contracts. -->*/
