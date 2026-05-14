@@ -58,5 +58,7 @@ Step 5. Test Functions
 
         For 1 Ether withdrawal:
         1000000000000000000
+        withdraw 0
+
 
     4. Click withdraw -->*/
