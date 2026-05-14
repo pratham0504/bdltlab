@@ -23,7 +23,6 @@ contract Crowdfunding {
         uint _goal,
         uint _durationInMinutes
     ) public {
-
         campaignCount++;
 
         campaigns[campaignCount] = Campaign({
@@ -38,7 +37,6 @@ contract Crowdfunding {
 
     // Donate to campaign
     function donate(uint _campaignId) public payable {
-
         Campaign storage campaign = campaigns[_campaignId];
 
         require(block.timestamp < campaign.deadline, "Campaign ended");
@@ -50,7 +48,6 @@ contract Crowdfunding {
 
     // Withdraw funds by creator if goal reached
     function withdrawFunds(uint _campaignId) public {
-
         Campaign storage campaign = campaigns[_campaignId];
 
         require(msg.sender == campaign.creator, "Only creator can withdraw");
@@ -58,26 +55,31 @@ contract Crowdfunding {
         require(campaign.amountCollected >= campaign.goal, "Goal not reached");
         require(!campaign.fundsWithdrawn, "Funds already withdrawn");
 
+        // Effect: Mark as withdrawn before the interaction to prevent reentrancy
         campaign.fundsWithdrawn = true;
+        uint256 amountToTransfer = campaign.amountCollected;
 
-        campaign.creator.transfer(campaign.amountCollected);
+        // Interaction: Use .call instead of .transfer
+        (bool success, ) = campaign.creator.call{value: amountToTransfer}("");
+        require(success, "Transfer to creator failed");
     }
 
     // Refund donors if goal not reached
     function refund(uint _campaignId) public {
-
         Campaign storage campaign = campaigns[_campaignId];
 
         require(block.timestamp >= campaign.deadline, "Campaign still active");
         require(campaign.amountCollected < campaign.goal, "Goal was reached");
 
         uint donatedAmount = donations[_campaignId][msg.sender];
-
         require(donatedAmount > 0, "No donation found");
 
+        // Effect: Reset donation balance before the interaction
         donations[_campaignId][msg.sender] = 0;
 
-        payable(msg.sender).transfer(donatedAmount);
+        // Interaction: Use .call instead of .transfer
+        (bool success, ) = payable(msg.sender).call{value: donatedAmount}("");
+        require(success, "Refund failed");
     }
 
     // View campaign details
@@ -85,23 +87,23 @@ contract Crowdfunding {
         public
         view
         returns (
-            string memory,
-            uint,
-            uint,
-            uint
+            string memory title,
+            uint goal,
+            uint deadline,
+            uint amountCollected,
+            bool withdrawn
         )
     {
         Campaign memory campaign = campaigns[_campaignId];
-
         return (
             campaign.title,
             campaign.goal,
             campaign.deadline,
-            campaign.amountCollected
+            campaign.amountCollected,
+            campaign.fundsWithdrawn
         );
     }
 }
-
 
 
 /*<!-- Steps to Perform in Remix IDE
