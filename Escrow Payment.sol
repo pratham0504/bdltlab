@@ -56,22 +56,20 @@ contract EscrowPayment {
 
     // Internal function to release funds
     function releaseFunds() internal {
+    require(!fundsReleased, "Funds already released");
+    require(!disputeRaised, "Dispute exists");
 
-        require(!fundsReleased, "Funds already released");
-        require(!disputeRaised, "Dispute exists");
+    bool shouldRelease = (buyerApproved && sellerApproved) || (block.timestamp >= releaseTime);
 
-        // Release if both approved
-        if (buyerApproved && sellerApproved) {
-            fundsReleased = true;
-            seller.transfer(address(this).balance);
-        }
-
-        // Auto release after deadline
-        else if (block.timestamp >= releaseTime) {
-            fundsReleased = true;
-            seller.transfer(address(this).balance);
-        }
+    if (shouldRelease) {
+        fundsReleased = true;
+        uint256 amountToTransfer = address(this).balance;
+        
+        // Modern transfer method
+        (bool success, ) = seller.call{value: amountToTransfer}("");
+        require(success, "Transfer failed");
     }
+}
 
     // Anyone can trigger auto release after deadline
     function autoRelease() public {
